@@ -265,6 +265,23 @@ body {
     color: #D8A6A5;
 }
 
+/* Login Button */
+
+.nav .login-btn {
+    background-color: #D8A6A5;
+    color: white;
+    padding: 5px 22px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav .login-btn:hover {
+    background-color: #D8A6A5;
+    color: #554343;
+}
+
 
 /* Hero Section */
 
@@ -625,3 +642,20 @@ body {
 }
 
 
+    
+.password{
+    position: relative;
+    top: -85px;
+} 
+.check{
+    position: relative;
+    top: -85px;
+} 
+.link1{
+    position: relative;
+    top: -85px;
+} 
+#Message1{
+    position: relative;
+    top: -85px;
+} 
