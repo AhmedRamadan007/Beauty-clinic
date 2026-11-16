@@ -37,7 +37,37 @@ bookingForm.addEventListener("submit", function(event) {
 
     bookingForm.reset();
 
+
 });
+
+// Open Login
+
+let openLogin = document.querySelector("#openLogin");
+
+let loginPopup = document.querySelector("#loginPopup");
+
+let closeLogin = document.querySelector("#closeLogin");
+
+openLogin.addEventListener("click", function() {
+
+    loginPopup.style.display = "flex";
+
+});
+
+
+// Close Login
+
+closeLogin.addEventListener("click", function() {
+
+    loginPopup.style.display = "none";
+
+});
+
+
+// Login Form
+g
+
+
 var users= JSON.parse(localStorage.getItem("users")) || []
 
 var SignupForm= document.getElementById("SignupForm")
