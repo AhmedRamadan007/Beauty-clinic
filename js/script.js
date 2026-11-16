@@ -38,3 +38,4 @@ bookingForm.addEventListener("submit", function(event) {
     bookingForm.reset();
 
 });
+
