@@ -1,4 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"poppins", sans-serif;
+}
 
+.navbar.navbar-expand-lg.navbar-light{
+    padding: 0px; 
+    
+}
+
+.container-fluid{
+      background-color: beige;
+padding: 12px;
+border: 0;
+}
+
+.navbar-brand{
+    position: absolute;
+    left: 45px;
+    font-size: 30px;
+}
+
+.navbar-nav{
+
+    gap: 20px;
+    
+}
+
+#home{
+    border-radius: 12px;
+    transition: all .5s;
+}
+
+#home:hover{
+    background-color:rgba(128, 128, 128, 0.192) ;
+border-radius: 10px;
+padding: 4px;
+transform: scale(1.12);
+}
+#about{
+    border-radius: 12px;
+    transition: all .5s;
+}
+
+#about:hover{
+    background-color:rgba(128, 128, 128, 0.192) ;
+border-radius: 10px;
+padding: 4px;
+transform: scale(1.12);
+}
+#services{
+    border-radius: 12px;
+    transition: all .5s;
+}
+
+#services:hover{
+    background-color:rgba(128, 128, 128, 0.192) ;
+border-radius: 10px;
+padding: 4px;
+transform: scale(1.12);
+}
+#doctors{
+    border-radius: 12px;
+    transition: all .5s;
+}
+
+#doctors:hover{
+    background-color:rgba(128, 128, 128, 0.192) ;
+border-radius: 10px;
+padding: 4px;
+transform: scale(1.12);
+}
+#booking{
+    border-radius: 12px;
+    transition: all .5s;
+}
+
+#booking:hover{
+    background-color:rgba(128, 128, 128, 0.192) ;
+border-radius: 10px;
+padding: 4px;
+transform: scale(1.12);
+}
+
+
+#navbarNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNav{
+    background-color: #d37573;
+border-radius: 12px;
+position: relative;
+right: 35px;
+padding: 4px 14px;
+border: 0;
+transition: all .2s;
+}
+
+.btnNav:hover{
+    background-color: gold;
+    transform: scale(1.08);
+}
+
+.title{
+    background-color: #d3a692;
+    display: flex;
+    justify-content: center;
+    font-size: 43px;
+color: white;
+position: absolute;
+top: 199px;
+left: 322px;
+margin-top: 22px;
+}
+
+
+.form{
+    background-color: #d3a692;
+padding: 60px;
+height: 660px;
+
+}
+
+.feild{
+    border: 2px #d8a6a5 solid;
+    position: relative;
+    left: 247px;
+    top: 133px;
+    width: 300px;
+    height: 392px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 25px;
+}
+
+.btn{
+    width: 250px;
+    position: relative;
+    left: 5px;
+    top: -11px;
+}
+
+.qeust{
+    position: relative;
+    left: 28px;
+    top: -6px;
+}
+
+.register{
+    border: 2px #d8a6a5 solid;
+    position: relative;
+    left: 450px;
+    width: 358px;
+    height: 544px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 25px;
+}
+
+.title1{
+     background-color: #d3a692;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+color: white;
+position: absolute;
+top: 64px;
+left: 552px;
+margin-top: 22px;
+}
+
+.btn1{
+     width: 250px;
+     height: 35px;
+    position: relative;
+    left: 28px;
+    top: -14px;
+    border-radius: 6px;
+}
+
+.Gender{
+    position: relative;
+    top: 6px;
+}
+
+.email{
+    position: relative;
+    top: -50px;
+} 
 /* General */
 
 * {
