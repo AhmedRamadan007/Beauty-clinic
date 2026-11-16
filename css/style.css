@@ -132,7 +132,7 @@ height: 660px;
     left: 247px;
     top: 133px;
     width: 300px;
-    height: 392px;
+    height: 356px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -146,13 +146,13 @@ height: 660px;
     width: 250px;
     position: relative;
     left: 5px;
-    top: -11px;
+    top: -100px;
 }
 
 .qeust{
     position: relative;
     left: 28px;
-    top: -6px;
+    top: -95px;
 }
 
 .register{
@@ -600,3 +600,22 @@ body {
     }
 
 }
+    left: 27px;
+    max-width: 260px;git 
+} 
+.password{
+    position: relative;
+    top: -85px;
+} 
+.check{
+    position: relative;
+    top: -85px;
+} 
+.link1{
+    position: relative;
+    top: -85px;
+} 
+#Message1{
+    position: relative;
+    top: -85px;
+} 
