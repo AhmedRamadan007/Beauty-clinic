@@ -28,56 +28,56 @@ border: 0;
     
 }
 
-#home{
+#login-home{
     border-radius: 12px;
     transition: all .5s;
 }
 
-#home:hover{
+#login-home:hover{
     background-color:rgba(128, 128, 128, 0.192) ;
 border-radius: 10px;
 padding: 4px;
 transform: scale(1.12);
 }
-#about{
+#login-about{
     border-radius: 12px;
     transition: all .5s;
 }
 
-#about:hover{
+#login-about:hover{
     background-color:rgba(128, 128, 128, 0.192) ;
 border-radius: 10px;
 padding: 4px;
 transform: scale(1.12);
 }
-#services{
+#login-services{
     border-radius: 12px;
     transition: all .5s;
 }
 
-#services:hover{
+#login-services:hover{
     background-color:rgba(128, 128, 128, 0.192) ;
 border-radius: 10px;
 padding: 4px;
 transform: scale(1.12);
 }
-#doctors{
+#login-doctors{
     border-radius: 12px;
     transition: all .5s;
 }
 
-#doctors:hover{
+#login-doctors:hover{
     background-color:rgba(128, 128, 128, 0.192) ;
 border-radius: 10px;
 padding: 4px;
 transform: scale(1.12);
 }
-#booking{
+#login-booking{
     border-radius: 12px;
     transition: all .5s;
 }
 
-#booking:hover{
+#login-booking:hover{
     background-color:rgba(128, 128, 128, 0.192) ;
 border-radius: 10px;
 padding: 4px;
@@ -131,8 +131,8 @@ height: 660px;
     position: relative;
     left: 247px;
     top: 133px;
-    width: 300px;
-    height: 356px;
+    width: 347px;
+    height: 333px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -145,14 +145,14 @@ height: 660px;
 .btn{
     width: 250px;
     position: relative;
-    left: 5px;
-    top: -100px;
+    left: 30px;
+    top: -122px;
 }
 
 .qeust{
     position: relative;
-    left: 28px;
-    top: -95px;
+    left: 50px;
+    top: -114px;
 }
 
 .register{
@@ -199,7 +199,30 @@ margin-top: 22px;
 .email{
     position: relative;
     top: -50px;
+        left: 32px;
+    max-width: 260px;
 } 
+
+.password{
+    position: relative;
+    top: -85px;
+        left: 32px;
+    max-width: 260px;
+} 
+.check{
+    position: relative;
+    top: -85px;
+} 
+.link1{
+    position: relative;
+    top: -117px;
+        left: 180px;
+} 
+#Message1{
+    position: relative;
+    top: -116px;
+} 
+
 /* General */
 
 * {
@@ -600,22 +623,5 @@ body {
     }
 
 }
-    left: 27px;
-    max-width: 260px;git 
-} 
-.password{
-    position: relative;
-    top: -85px;
-} 
-.check{
-    position: relative;
-    top: -85px;
-} 
-.link1{
-    position: relative;
-    top: -85px;
-} 
-#Message1{
-    position: relative;
-    top: -85px;
-} 
+
+
