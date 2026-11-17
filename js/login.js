@@ -65,7 +65,7 @@ function showMessage(text, color) {
  if (foundUser.role === "admin") {
      window.location.href = "admin.html"
  }else{
-     window.location.href = "user.html"}
+     window.location.href = "index.html"}
  } , 1500)
  
-    })
+    }) 
