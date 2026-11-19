@@ -18,19 +18,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" id="home" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" id="login-home" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="about" href="#">About</a>
+          <a class="nav-link" id="login-about" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="services" href="#">Services</a>
+          <a class="nav-link" id="login-services" href="services.html">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="doctors" href="#">Doctors</a>
+          <a class="nav-link" id="login-doctors" href="doctors.html">Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="booking" href="#">Booking</a>
+          <a class="nav-link" id="login-booking" href="booking.html">Booking</a>
         </li>
         
       </ul>
@@ -41,18 +41,23 @@
   </div>
 </nav>
 
-<form class="form" id="SignupForm">
-  <h1 class="title1">Register !</h1>
+<form class="formreg" id="SignupForm">
 
 <div class="register" id="FormRegister">
+  <div class="container">
+  <div class="logoreg">
+     <img class="logo" src="./images/photo_6044146341832758806_y.jpg" alt="Beauty clinic logo">
+  </div>
+  <h1 class="title1">Welcome to Beauty clinic</h1>
+
    <div class="fullname">
     <label for="FullName" class="form-label">Full Name</label>
-    <input type="text" class="form-control" id="FullName">
+    <input placeholder="Full Name..." type="text" class="form-control" id="FullName">
    </div>
 
     <div class="Age">
     <label for="Age" class="form-label">Age</label>
-    <input type="number" class="form-control" id="Age">
+    <input placeholder="Age..." type="number" class="form-control" id="Age">
     </div>
 
      <div class="Gender">
@@ -63,28 +68,28 @@
     <input type="radio" name="Gender" id="Gender2" value="Female">
      </div>
   
-  <div class="email">
-    <label for="Email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+  <div class="emailregister">
+    <label for="Emailregister" class="form-label">Email address</label>
+    <input placeholder="Email..." type="email" class="form-control" id="Emailregister" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else!</div>
   </div>
-  <div class="password">
-    <label for="Password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="Password">
+  <div class="passwordregister">
+    <label for="Passwordregister" class="form-label">Password</label>
+    <input placeholder="Password..." type="password" class="form-control" id="Passwordregister">
   </div>
-   <div class="ConfirmPassword">
-    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" id="ConfirmPassword">
+   <div class="ConfirmPasswordregister">
+    <label for="ConfirmPasswordregister" class="form-label">Confirm Password</label>
+    <input placeholder="Confirm Password..." type="password" class="form-control" id="ConfirmPasswordregister">
    </div>
  <p id="Message"></p>
-  <button type="submit" class="btn1 btn-primary">Create My Account</button>
+  <button type="submit" class="btn1">Create My Account</button>
 
   </div>
-
+</div>
   
 </form>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/register.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

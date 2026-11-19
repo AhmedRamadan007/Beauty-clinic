@@ -19,19 +19,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" id="home" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" id="login-home" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="about" href="#">About</a>
+          <a class="nav-link" id="login-about" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="services" href="#">Services</a>
+          <a class="nav-link" id="login-services" href="services.html">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="doctors" href="#">Doctors</a>
+          <a class="nav-link" id="login-doctors" href="Doctors.html">Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="booking" href="#">Booking</a>
+          <a class="nav-link" id="login-booking" href="booking.html">Booking</a>
         </li>
         
       </ul>
@@ -44,32 +44,40 @@
 
     
 <form class="form" id="loginForm">
-  <h1 class="title">login !</h1>
+  
 
   <div class="feild">
+    <div class="container">
+    <div class="logo-wrap">
+      <img class="logo" src="./images/photo_6044146341832758806_y.jpg" alt="Beauty clinic logo">
+    </div>
+    <h1 class="title">Welcome Back</h1>
   <div class="email">
-    <label for="emailLogin" class="form-label" style="font-size: 35px; position: relative;right: 44px;top: 54px;">&#9993: </label>
+    <label for="emailLogin" class="form-label">Email address:</label>
     <input placeholder="Email..." type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else!</div>
   </div>
   <div class="password">
-    <label for="passwordLogin" class="form-label"; style="font-size: 26px; position: relative;right: 40px;top: 47px;">&#128274:</label>
+    <label for="passwordLogin" class="form-label">Password:</label>
     <input placeholder="Password..." type="password" class="form-control" id="passwordLogin">
   </div>
+
+  <div class="row-options">
   <div class="check form-check">
     <input type="checkbox" class="form-check-input" id="check">
     <label class="form-check-label" for="check">Remember me</label>
   </div>
   <a class="link1" href="">Forgot Password?</a>
+</div>
   <p id="Message1"></p>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn">Submit</button>
 
-  <h6 class="qeust">Have any account? <span>
+  <h6 class="qeust">Don't have an account? <span>
     <a class="link" href="./register.html">Sign Up</a>
   </span></h6>
   
   </div>
-
+</div>
   
 </form>
 
