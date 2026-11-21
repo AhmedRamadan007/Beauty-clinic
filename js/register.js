@@ -30,7 +30,7 @@ SignupForm.addEventListener("submit", function (e) {
 
     
     if (fullName === ""||age === ""||email === ""||password === ""||confirmPassword === "") {
-        showMessage("Please fill in all feilds","red")
+        showMessage("Please fill in all fields","red")
         return;
     }
 

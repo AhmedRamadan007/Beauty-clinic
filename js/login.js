@@ -35,10 +35,10 @@ function showMessage(text, color) {
         var Password = passwordInput.value
 
         if (Email === "" || Password === "") {
-            showMessage("Please fill in all feilds" , "red")
+            showMessage("Please fill in all fields" , "red")
             return;
         }
-        console.log(Email, Password, users);
+      //   console.log(Email, Password, users);
         
  var foundUser = users.find(function (user) {
     return user.email === Email && user.password === Password
