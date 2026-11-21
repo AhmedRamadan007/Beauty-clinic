@@ -1,9 +1,32 @@
 
 
-var users = JSON.parse(localStorage.getItem("users")) ||[]
+// var users = JSON.parse(localStorage.getItem("users")) ||[]
 
- var adminExists = users.some(function (user) {
-    return user.role === "admin"
+
+
+var users = JSON.parse(localStorage.getItem("users")) || [];
+
+var adminExists = users.some(function(user) {
+    return user.email === "adminclinic@gmail.com";
+});
+
+if (!adminExists) {
+
+    users.push({
+        fullName: "Admin",
+        age: 30,
+        email: "adminclinic@gmail.com",
+        password: "Admin@123",
+        gender: "male",
+        role: "admin"
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+var adminExists = users.some(function (user) {
+   return user.role === "admin"
  })
 
  if (!adminExists) {
