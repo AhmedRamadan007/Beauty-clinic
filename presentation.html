@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Clinic Presentation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #f8f3ed;
+  --pink: #d8aaa4;
+  --brown: #6d5049;
+  --dark: #342724;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 7vh 9vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(35px);
+  transition: .8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.eyebrow {
+  color: var(--pink);
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(55px, 8vw, 110px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(40px, 5vw, 65px);
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 2;
+  color: #786963;
+  max-width: 550px;
+}
+
+.accent {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.cover {
+  background:
+  linear-gradient(90deg, rgba(248,243,237,.96), rgba(248,243,237,.5)),
+  url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1800');
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-content {
+  animation: reveal 1.2s both;
+}
+
+.cover p {
+  margin-top: 25px;
+}
+
+.line {
+  width: 75px;
+  height: 2px;
+  background: var(--pink);
+  margin: 28px 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.visual {
+  height: 55vh;
+  overflow: hidden;
+  border-radius: 180px 180px 8px 8px;
+  box-shadow: 0 20px 50px #6d504922;
+}
+
+.visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s;
+}
+
+.active .visual img {
+  transform: scale(1.04);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.card {
+  padding: 25px;
+  background: #fffaf6;
+  border: 1px solid #eaded6;
+  border-radius: 5px;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #f1dfda;
+}
+
+.card h3 {
+  font-family: 'Playfair Display';
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.card span {
+  font-size: 11px;
+  color: var(--pink);
+  letter-spacing: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: .5s;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+.quote {
+  font-family: 'Playfair Display';
+  font-size: clamp(30px, 4vw, 55px);
+  line-height: 1.4;
+  max-width: 850px;
+}
+
+.controls {
+  position: fixed;
+  bottom: 35px;
+  right: 8vw;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  z-index: 20;
+}
+
+button {
+  border: 1px solid var(--pink);
+  background: transparent;
+  color: var(--brown);
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: .3s;
+  font-family: inherit;
+}
+
+button:hover {
+  background: var(--pink);
+  color: white;
+}
+
+.counter {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--pink);
+  transition: .5s;
+  z-index: 30;
+}
+
+.brand {
+  position: fixed;
+  top: 30px;
+  left: 8vw;
+  font-family: 'Playfair Display';
+  letter-spacing: 3px;
+  font-size: 14px;
+  z-index: 30;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media(max-width:700px) {
+  .slide { padding: 80px 7vw; overflow-y: auto; }
+  .split { grid-template-columns: 1fr; gap: 20px; }
+  .visual { height: 30vh; }
+  .cards { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery img { height: 160px; }
+  .brand { top: 20px; }
+  .controls { bottom: 15px; right: 5vw; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="brand">BEAUTY CLINIC</div>
+
+<!-- 1 INTRO -->
+<section class="slide active cover">
+  <div class="cover-content">
+    <div class="eyebrow">Website Design Presentation</div>
+    <h1>Beauty <br><span class="accent">Clinic.</span></h1>
+    <div class="line"></div>
+    <p>A new digital experience where beauty meets elegance, care and technology.</p>
+    <p style="margin-top:35px;font-size:11px;letter-spacing:3px">
+      DESIGN • EXPERIENCE • INNOVATION
+    </p>
+  </div>
+</section>
+
+<!-- 2 ABOUT -->
+<section class="slide">
+  <div class="split">
+    <div>
+      <div class="eyebrow">01 — Introduction</div>
+      <h2>About The <span class="accent">Project</span></h2>
+      <p>
+        A modern website created for a beauty clinic to showcase its services,
+        introduce its medical team and provide visitors with an easy and
+        elegant digital experience.
+      </p>
+    </div>
+    <div class="visual">
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900">
+    </div>
+  </div>
+</section>
+
+<!-- 3 GOALS -->
+<section class="slide">
+  <div class="eyebrow">02 — Our Vision</div>
+  <h2>Project <span class="accent">Goals</span></h2>
+  <p>Our main focus is to create a website that combines trust, beauty and usability.</p>
+  <div class="cards">
+    <div class="card"><span>01</span><h3>Modern Identity</h3><p>Build a strong online presence.</p></div>
+    <div class="card"><span>02</span><h3>Easy Navigation</h3><p>Make information easy to find.</p></div>
+    <div class="card"><span>03</span><h3>Build Trust</h3><p>Introduce qualified doctors.</p></div>
+    <div class="card"><span>04</span><h3>Better Experience</h3><p>Simplify the booking journey.</p></div>
+  </div>
+</section>
+
+<!-- 4 LANDING -->
+<section class="slide">
+  <div class="split">
+    <div>
+      <div class="eyebrow">03 — Main Page</div>
+      <h2>Landing <span class="accent">Page</span></h2>
+      <p>
+        The first impression of the clinic. An elegant hero section,
+        featured treatments, doctors, testimonials and clear calls to action.
+      </p>
+      <div class="line"></div>
+      <p>Elegant visuals. Clear message. Strong first impression.</p>
+    </div>
+    <div class="visual">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900">
+    </div>
+  </div>
+</section>
+
+<!-- 5 SERVICES -->
+<section class="slide">
+  <div class="eyebrow">04 — Explore</div>
+  <h2>Our <span class="accent">Services</span></h2>
+  <p>A dedicated space to explore the treatments and beauty solutions offered by the clinic.</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600">
+    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600">
+    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600">
+  </div>
+</section>
+
+<!-- 6 DOCTORS -->
+<section class="slide">
+  <div class="split">
+    <div>
+      <div class="eyebrow">05 — Our Team</div>
+      <h2>Meet Our <span class="accent">Doctors</span></h2>
+      <p>
+        Professional doctor profiles that highlight expertise,
+        specializations and qualifications to build confidence and trust.
+      </p>
+    </div>
+    <div class="visual">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900">
+    </div>
+  </div>
+</section>
+
+<!-- 7 PRICING -->
+<section class="slide">
+<div class="eyebrow">06 — Investment</div>
+  <h2>Our <span class="accent">Pricing</span></h2>
+  <p>Clear and organized pricing information to help visitors explore treatment costs and packages.</p>
+  <div class="cards">
+    <div class="card"><span>01 — TREATMENTS</span><h3>Service Prices</h3><p>Easy access to individual treatment prices.</p></div>
+    <div class="card"><span>02 — OFFERS</span><h3>Special Packages</h3><p>Discover available offers and bundles.</p></div>
+  </div>
+</section>
+
+<!-- 8 UX -->
+<section class="slide">
+  <div class="eyebrow">07 — Design Strategy</div>
+  <h2>UI / UX <span class="accent">Experience</span></h2>
+  <p>Every design decision supports simplicity, elegance and a smooth user journey.</p>
+  <div class="cards">
+    <div class="card"><h3>Colors</h3><p>Soft beige, nude and blush pink.</p></div>
+    <div class="card"><h3>Typography</h3><p>Elegant and readable fonts.</p></div>
+    <div class="card"><h3>Layout</h3><p>Clean and organized sections.</p></div>
+    <div class="card"><h3>Responsive</h3><p>Adapted to different screen sizes.</p></div>
+  </div>
+</section>
+
+<!-- 9 JOURNEY -->
+<section class="slide">
+  <div class="eyebrow">08 — User Journey</div>
+  <h2>Simple & <span class="accent">Seamless</span></h2>
+  <div class="cards">
+    <div class="card"><span>01</span><h3>Discover</h3><p>Visit the landing page.</p></div>
+    <div class="card"><span>02</span><h3>Explore</h3><p>Browse available services.</p></div>
+    <div class="card"><span>03</span><h3>Connect</h3><p>Meet the medical team.</p></div>
+    <div class="card"><span>04</span><h3>Choose</h3><p>Review prices and book.</p></div>
+  </div>
+</section>
+
+<!-- 10 END -->
+<section class="slide cover">
+  <div class="eyebrow">Thank You</div>
+  <h1>Beauty is an <br><span class="accent">Experience.</span></h1>
+  <div class="line"></div>
+  <p>Beauty, Trust & Technology in One Place.</p>
+  <p style="margin-top:30px;letter-spacing:3px;font-size:12px">
+    BEAUTY CLINIC — WEBSITE PROJECT
+  </p>
+</section>
+
+<div class="controls">
+  <button onclick="changeSlide(-1)">←</button>
+  <span class="counter" id="counter">01 / 10</span>
+  <button onclick="changeSlide(1)">→</button>
+  <button onclick="toggleFullScreen()">⛶</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(index) {
+  slides[current].classList.remove('active');
+  current = (index + slides.length) % slides.length;
+  slides[current].classList.add('active');
+
+  document.getElementById('counter').textContent =
+    String(current + 1).padStart(2,'0') + ' / ' +
+    String(slides.length).padStart(2,'0');
+
+  document.getElementById('progress').style.width =
+    ((current + 1) / slides.length * 100) + '%';
+}
+
+function changeSlide(direction) {
+  showSlide(current + direction);
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+  if(e.key === 'ArrowLeft') changeSlide(-1);
+});
+
+function toggleFullScreen() {
+  if(!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>
