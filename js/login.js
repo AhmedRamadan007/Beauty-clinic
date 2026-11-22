@@ -1,9 +1,32 @@
 
 
-var users = JSON.parse(localStorage.getItem("users")) ||[]
+// var users = JSON.parse(localStorage.getItem("users")) ||[]
 
- var adminExists = users.some(function (user) {
-    return user.role === "admin"
+
+
+var users = JSON.parse(localStorage.getItem("users")) || [];
+
+var adminExists = users.some(function(user) {
+    return user.email === "adminclinic@gmail.com";
+});
+
+if (!adminExists) {
+
+    users.push({
+        fullName: "Admin",
+        age: 30,
+        email: "adminclinic@gmail.com",
+        password: "Admin@123",
+        gender: "male",
+        role: "admin"
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+var adminExists = users.some(function (user) {
+   return user.role === "admin"
  })
 
  if (!adminExists) {
@@ -35,10 +58,10 @@ function showMessage(text, color) {
         var Password = passwordInput.value
 
         if (Email === "" || Password === "") {
-            showMessage("Please fill in all feilds" , "red")
+            showMessage("Please fill in all fields" , "red")
             return;
         }
-        console.log(Email, Password, users);
+      //   console.log(Email, Password, users);
         
  var foundUser = users.find(function (user) {
     return user.email === Email && user.password === Password
@@ -65,7 +88,7 @@ function showMessage(text, color) {
  if (foundUser.role === "admin") {
      window.location.href = "admin.html"
  }else{
-     window.location.href = "user.html"}
+     window.location.href = "index.html"}
  } , 1500)
  
-    })
+    }) 

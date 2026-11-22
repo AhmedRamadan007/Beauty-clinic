@@ -1,154 +1,68 @@
 
-// Booking Button
+// // Booking Button
 
-let bookButton = document.querySelector(".hero-content button");
+// let bookButton = document.querySelector(".hero-content button");
 
-bookButton.addEventListener("click", function() {
+// bookButton.addEventListener("click", function() {
 
-    document.querySelector("#booking").scrollIntoView({
-        behavior: "smooth"
-    });
+//     document.querySelector("#booking").scrollIntoView({
+//         behavior: "smooth"
+//     });
 
-});
-
-
-// Learn More Button
-
-let learnButton = document.querySelector(".about-content button");
-
-learnButton.addEventListener("click", function() {
-
-    document.querySelector("#services").scrollIntoView({
-        behavior: "smooth"
-    });
-
-});
+// });
 
 
-// Booking Form
+// // Learn More Button
 
-let bookingForm = document.querySelector("#bookingForm");
+// let learnButton = document.querySelector(".about-content button");
 
-bookingForm.addEventListener("submit", function(event) {
+// learnButton.addEventListener("click", function() {
 
-    event.preventDefault();
+//     document.querySelector("#about.html").scrollIntoView({
+//         behavior: "smooth"
+//     });
 
-    alert("Your appointment has been booked successfully!");
-
-    bookingForm.reset();
-
-
-});
-
-// Open Login
-
-let openLogin = document.querySelector("#openLogin");
-
-let loginPopup = document.querySelector("#loginPopup");
-
-let closeLogin = document.querySelector("#closeLogin");
-
-openLogin.addEventListener("click", function() {
-
-    loginPopup.style.display = "flex";
-
-});
+// });
 
 
-// Close Login
+// // Booking Form
 
-closeLogin.addEventListener("click", function() {
+// let bookingForm = document.querySelector("#bookingForm");
 
-    loginPopup.style.display = "none";
+// bookingForm.addEventListener("submit", function(event) {
 
-});
+//     event.preventDefault();
 
+//     alert("Your appointment has been booked successfully!");
 
-// Login Form
-g
+//     bookingForm.reset();
 
+// });
 
-var users= JSON.parse(localStorage.getItem("users")) || []
+  document.addEventListener("DOMContentLoaded", function () {
+    const openLogin = document.getElementById("openLogin");
+    const currentUser = localStorage.getItem("currentUser");
 
-var SignupForm= document.getElementById("SignupForm")
-var FullName = document.getElementById("FullName")
-var Age = document.getElementById("Age")
-var Email = document.getElementById("Email")
-var Password = document.getElementById("Password")
-var ConfirmPassword = document.getElementById("ConfirmPassword")
-var Message = document.getElementById("Message")
+    if (currentUser) {
+      // 1. إذا كان هناك مستخدم مسجل، حوّل الزر إلى Logout
+      openLogin.textContent = "Logout";
+      openLogin.href = "#"; // إلغاء الذهاب لصفحة اللوجين
 
-function showMessage(text, color) {
-        Message.textContent = text
-        Message.style.color = color
+      // 2. عند الضغط على Logout
+      openLogin.addEventListener("click", function (e) {
+        e.preventDefault();
+        
+        // مسح بيانات المستخدم المسجل
+        localStorage.removeItem("currentUser");
+        
+        // إعادة الزر لحالته الأصلية أو تحديث الصفحة
+        openLogin.textContent = "Login";
+        openLogin.href = "login.html";
+        window.location.reload(); // تحديث الصفحة لتأكيد الخروج
+      });
+    } else {
+      // إذا لم يكن هناك مستخدم مسجل
+      openLogin.textContent = "Login";
+      openLogin.href = "login.html";
     }
-
-
-SignupForm.addEventListener("submit", function (e) {
-    e.preventDefault()
-
-    var fullName = FullName.value
-    var age = Age.value
-    var email = Email.value
-    var password = Password.value
-    var confirmPassword = ConfirmPassword.value
-
-    var selestGender = document.querySelector('input[name="Gender"]:checked')
-    var gender = selestGender ? selestGender.value : ""
-
-    
-    if (fullName === ""||age === ""||email === ""||password === ""||confirmPassword === "") {
-        showMessage("Please fill in all feilds","red")
-        return;
-    }
-
-    if (gender === "") {
-        showMessage("Please select the gender","red")
-        return;
-    }
-
-    if (age < 18) {
-        showMessage("You must be at least 18 years old","red")
-        return;
-    }
-
-    if (password.length < 6) {
-        showMessage("Password must be at least 6 chars", "red")
-        return;
-    }
-    
-    if (password !== confirmPassword) {
-        showMessage("Password and its confirmation don't match", "red")
-        return;
-    }
-
-
-var emailLower = email.toLowerCase();
-var emailExists = users.some(function (user) {
-    return user.email === emailLower
-    
-})
-
-if (emailExists) {
-    showMessage("This email is already registed" , "red")
-     return;
-}
-
-var newUser = {
-    fullName: fullName,
-    age: age,
-    email: emailLower,
-    password: password,
-    gender: gender,
-    role: "user"
-}
-users.push(newUser)
-localStorage.setItem("users" , JSON.stringify(users))
-
-showMessage("Account created successfully", "green")
-SignupForm.reset()
-setTimeout(function () {
-    window.location.href = "login.html"
-} , 2000)
-
-})
+  });
