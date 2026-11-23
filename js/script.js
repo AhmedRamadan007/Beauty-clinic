@@ -66,3 +66,10 @@
       openLogin.href = "login.html";
     }
   });
+<<<<<<< HEAD
+=======
+
+
+  
+
+>>>>>>> main
